@@ -1,0 +1,45 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: thin solid rgb(167, 167, 167);
+
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background: rgb(66, 79, 230);
+    background: linear-gradient(169deg, rgba(66, 79, 230, 1) 0%, rgba(45,30,143,1) 85%, rgba(25,8,77,1) 100%, rgba(255,255,255,1) 100%);
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px -1px, rgba(0, 0, 0, 0.06) 0px 1px 2px -1px;
+    }
+  }
+
+  .logo {
+    font-size: 40px;
+    font-weight: 800;
+    color: rgba(25,8,77,1);
+  }
+}
+
+@media (max-width: 500px) {
+  .nav {
+    .logo {
+      font-size: 32px;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .nav {
+    .logo {
+      font-size: 28px;
+    }
+  }
+}

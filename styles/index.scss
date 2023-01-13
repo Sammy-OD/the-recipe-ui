@@ -1,0 +1,118 @@
+@import url('https://fonts.cdnfonts.com/css/euclid-circular-a');
+
+@import '../components/Nav/Nav.scss';
+@import '../components/Loader/Loader.scss';
+@import './page.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(238, 240, 245);
+}
+
+.app-wrapper {
+  font-family: 'Euclid Circular A', sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.title {
+  margin: 20px 0;
+  font-size: 25px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+  padding-bottom: 40px;
+}
+
+.card {
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+  .image {
+    width: 100%;
+    height: 250px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px 6px 0 0;
+    }
+  }
+
+  .text {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  
+    a {
+      position: relative;
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-weight: 500;
+      align-self: center;
+      justify-self: end;
+      color: #fff;
+      z-index: 1;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: all 0.8 ease;
+      -webkit-transition: all 0.8s ease;
+      background: rgb(66, 79, 230);
+      background: linear-gradient(169deg, rgba(66, 79, 230, 1) 0%, rgba(45,30,143,1) 90%, rgba(25,8,77,1) 100%, rgba(255,255,255,1) 100%);
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 25px;
+        transition: opacity 0.4s linear;
+        opacity: 0;
+        background: rgb(66, 79, 230);
+        background: linear-gradient(169deg, rgba(66, 79, 230, 1) 0%, rgba(45,30,143,1) 35%, rgba(25,8,77,1) 100%, rgba(255,255,255,1) 100%);
+      }
+
+      &:hover::before {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .card-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

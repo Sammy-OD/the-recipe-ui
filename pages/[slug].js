@@ -32,8 +32,6 @@ export async function getStaticPaths() {
     return {params: {slug: post.attributes.urlSlug}}
   });
 
-  console.log(data.blogPosts.data);
-
   return {
     paths,
     fallback: 'blocking'
@@ -51,8 +49,6 @@ export async function getStaticProps({ params }) {
       notFound: true
     }
   }
-
-  console.log(data.blogPosts.data[0].attributes?.title);
 
   const attrs = data.blogPosts.data[0].attributes;
 

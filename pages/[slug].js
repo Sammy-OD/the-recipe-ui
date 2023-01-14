@@ -41,6 +41,8 @@ export async function getStaticPaths() {
     return {params: {slug: post.attributes.urlSlug}}
   });
 
+  console.log(data.blogPosts.data);
+
   return {
     paths,
     fallback: true
@@ -52,6 +54,14 @@ export async function getStaticProps({ params }) {
     query: GET_INDIVIDUAL_POST,
     variables: { slugUrl: params.slug }
   });
+
+  if (data.blogPosts.data[0] === undefined) {
+    return {
+      notFound: true
+    }
+  }
+
+  console.log(data.blogPosts.data[0].attributes?.title);
 
   const attrs = data.blogPosts.data[0].attributes;
 

@@ -6,7 +6,7 @@ export default function Home({posts}) {
   return (
     <>
       <header>
-        <h1><span>THERECIPE</span> is dedicated to bringing you delicious and easy-to-follow recipes for all ocassions. From weeknight meals to special occasion dishes, we've got you covered. We believe that cooking should be fun and accesible to everyone, so we strive to provide simple and clear instructions for every recipe. <br/> Whether you're an experienced home cook or just starting out, you'll find something to love on our recipe blog. Join us in the kitchen and let's cook something delicious together!</h1>
+        <h1><span>THERECIPE</span> is dedicated to bringing you delicious and easy-to-follow recipes for all ocassions. From weeknight meals to special occasion dishes, we've got you covered. We believe that cooking should be fun and accesible to everyone, so we strive to provide simple and clear instructions for every recipe. <br/> Whether you're an experienced home cook or just starting out, you'll find something to love on our recipe blog. Join us in the kitchen and let's cook something delicious together!🍲</h1>
       </header>
       <main>
         <h3 className='title'>All Recipes</h3>

@@ -20,6 +20,20 @@ body {
   padding: 0 20px;
 }
 
+header {
+  h1 {
+    text-align: center;
+    padding: 20px;
+    font-weight: 400;
+    font-size: 20px;
+
+    span {
+      color: rgba(25,8,77,1);
+      font-weight: bold;
+    }
+  }
+}
+
 .title {
   margin: 20px 0;
   font-size: 25px;
@@ -113,5 +127,19 @@ body {
 @media (max-width: 500px) {
   .card-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  header {
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-weight: 400;
+      font-size: 18px;
+  
+      span {
+        color: rgba(25,8,77,1);
+        font-weight: bold;
+      }
+    }
   }
 }

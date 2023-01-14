@@ -2,9 +2,6 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
-import { useRouter } from 'next/router';
-
-import Loader from '../components/Loader/Loader';
 
 const client = new ApolloClient({
   uri: process.env.APP_URI,
@@ -12,12 +9,6 @@ const client = new ApolloClient({
 });
 
 export default function Post({post}) {
-  const router = useRouter();
-
-  if (router.isFallback) {
-    return <Loader />
-  }
-
   return (
     <div className='post'>
       <div className='hero'>
@@ -45,7 +36,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: true
+    fallback: 'blocking'
   }
 }
 

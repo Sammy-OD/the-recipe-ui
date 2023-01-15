@@ -13,7 +13,7 @@ const Layout = ({children}) => {
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
-          gtag('config', 'G-NMNWWJS35X');
+          gtag('config', 'G-NMNWWJS35X', {page_path: window.location.pathname});
         `
       }}/>
       <Head>

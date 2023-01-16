@@ -53,6 +53,19 @@
       font-size: 18px;
       display: block;
       margin-top: 8px;
+
+      ul,ol {
+        margin-left: 1.2rem;
+        margin-top: 0.3rem;
+
+        li {
+          margin: 0.5rem 0 ;
+        }
+      }
+
+      p {
+        margin-top: 0.5rem;
+      }
     }
   }
 }

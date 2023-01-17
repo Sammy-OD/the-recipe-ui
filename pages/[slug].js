@@ -2,6 +2,7 @@ import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
+import Head from 'next/head';
 
 const client = new ApolloClient({
   uri: process.env.APP_URI,
@@ -10,6 +11,10 @@ const client = new ApolloClient({
 
 export default function Post({post}) {
   return (
+    <>
+    <Head>
+      <title>{`The Recipe - ${post.title}`}</title>
+    </Head>
     <div className='post'>
       <div className='hero'>
         <img src={post.imageUrl} />
@@ -22,6 +27,7 @@ export default function Post({post}) {
         <span><MDXRemote {...post.content} /></span>
       </div>
     </div>
+    </>
   )
 }
 

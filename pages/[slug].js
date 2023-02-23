@@ -3,6 +3,7 @@ import { GET_ALL_SLUGS, GET_INDIVIDUAL_POST } from '../graphql/queries';
 import { serialize } from 'next-mdx-remote/serialize';
 import { MDXRemote } from 'next-mdx-remote';
 import Head from 'next/head';
+import Script from 'next/script';
 
 const client = new ApolloClient({
   uri: process.env.APP_URI,
@@ -12,21 +13,24 @@ const client = new ApolloClient({
 export default function Post({post}) {
   return (
     <>
-    <Head>
-      <title>{`The Recipe - ${post.title}`}</title>
-    </Head>
-    <div className='post'>
-      <div className='hero'>
-        <img src={post.imageUrl} />
-        <div className='overlay'></div>
-        <h1 className='title'>{post.title}</h1>
+      <Script data-ad-client="ca-pub-9572308981796894" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+      </Script>
+      <Head>
+        <title>{`The Recipe - ${post.title}`}</title>
+      </Head>
+      <div className='post'>
+        <div className='hero'>
+          <img src={post.imageUrl} />
+          <div className='overlay'></div>
+          <h1 className='title'>{post.title}</h1>
+        </div>
+        <div className='content'>
+          <p className='desc'>{post.desc}</p>
+          <h3 className='step'>how to prepare {post.title}</h3>
+          <span><MDXRemote {...post.content} /></span>
+        </div>
       </div>
-      <div className='content'>
-        <p className='desc'>{post.desc}</p>
-        <h3 className='step'>how to prepare {post.title}</h3>
-        <span><MDXRemote {...post.content} /></span>
-      </div>
-    </div>
     </>
   )
 }
